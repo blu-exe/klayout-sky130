@@ -1,0 +1,27 @@
+{
+  "name": "KLayout and Sky130 Environment",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "features": {      
+    "ghcr.io/devcontainers/features/desktop-lite:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+      },
+      "extensions": [
+        "ms-python.python",
+        "ms-vscode.remote-containers"
+      ]
+    }
+  },
+  "postCreateCommand": "bash .devcontainer/setup.sh",
+  "forwardPorts": [6080],
+  "portsAttributes": {
+      "6080": {
+        "label": "desktop"
+      }
+  }
+}
